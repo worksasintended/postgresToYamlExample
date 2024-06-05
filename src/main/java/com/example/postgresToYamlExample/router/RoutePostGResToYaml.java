@@ -1,17 +1,17 @@
-package router;
+package com.example.postgresToYamlExample.router;
 
+import com.example.postgresToYamlExample.processor.ProcessWorldDBToYaml;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.stereotype.Component;
-import processor.ProcessWorldDBToYaml;
 
 @Component
 public class RoutePostGResToYaml extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        System.out.println("started route");
+
         from("direct:start")
-                .to("sql:SELECT * FROM country")
+                .to("sql:select * from country;")
                 .process(new ProcessWorldDBToYaml());
 
     }

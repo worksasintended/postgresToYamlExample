@@ -1,4 +1,4 @@
-package domain;
+package com.example.postgresToYamlExample.domain;
 
 public class City {
     private String name;
